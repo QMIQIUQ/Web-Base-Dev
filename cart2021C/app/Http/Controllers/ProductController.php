@@ -4,20 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Models\Category;
+use App\Models\Product;
 
-
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     public function add(){
         $r=request();
-        $addCategory=Category::create([
+        $addProduct=Product::create([
             'name'=>$r->productName,
             'image'=>$r->productImage,
             'quantity'=>$r->productQuantity,
             'price'=>$r->productPrice,
             'discription'=>$r->productDiscription,
         ]);
-        return view('addCategory');
+        return view('addProduct');
     }
 }

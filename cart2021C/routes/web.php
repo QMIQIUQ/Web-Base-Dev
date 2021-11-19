@@ -21,9 +21,17 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+/**Category */
 Route::get('/addCategory', function () {
     return view('addCategory');
 });
+Route::post('/addCategory/store',[App\Http\Controllers\CategoryController::class, 'add'])->name('addCategory');
+
+/**Procduct */
+Route::get('/addProduct', function () {
+    return view('addProduct');
+});
+Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 'add'])->name('addProduct');
 
 Auth::routes();
 
