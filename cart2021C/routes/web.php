@@ -27,6 +27,9 @@ Route::get('/addCategory', function () {
 });
 Route::post('/addCategory/store',[App\Http\Controllers\CategoryController::class, 'add'])->name('addCategory');
 
+Route::get('/viewCategory',[App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
+
+
 /**Procduct */
 Route::get('/addProduct', function () {
     return view('addProduct');

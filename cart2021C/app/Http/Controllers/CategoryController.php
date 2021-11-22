@@ -17,4 +17,9 @@ class CategoryController extends Controller
         ]);
         return view('addCategory');
     }
+
+    public function view(){
+        $viewCategory=Category::all(); //generate SQL select* form category
+        return view('showCategory')->with('categories',$viewCategory);
+    }
 }
