@@ -32,9 +32,15 @@ Route::get('/viewCategory',[App\Http\Controllers\CategoryController::class, 'vie
 
 /**Procduct */
 Route::get('/addProduct', function () {
-    return view('addProduct');
+    return view('addProduct',['categoryID'=>App\Models\Category::all()]);
 });
+Route::get('/showCategory',[App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
+
 Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 'add'])->name('addProduct');
+
+
+
+
 
 Auth::routes();
 

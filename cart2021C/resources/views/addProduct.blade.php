@@ -10,7 +10,15 @@
         <form  action="{{route('addProduct')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="productName">Add Neww Category</label>
+                <label for="productName">Category</label>
+                <select name="categoryID" id="categoryID" class="form-control">
+                    @foreach ($categoryID as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="productName">Product name</label>
                 <input class="form-control" type="text" id="productName" name="productName" required>
             </div>
             <div class="form-group">
