@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Product;
 use App\Models\Category;
+use Session;
 
 class ProductController extends Controller
 {
@@ -20,13 +21,14 @@ class ProductController extends Controller
             'discription'=>$r->productDiscription,
         ]);
 
-
-        return view('addProduct') ->with('categoryID',Category::all());
+        Session::flash('success', "Product create successfully!");
+        return redirect()->route('viewProduct');
     }
 
-    public function show(){
-        $products=Product::paginate(5);
-        return view('showProduct')->with('products',$products);
+    public function view(){
+        $viewProducts=Product::all();
+        return view('viewProduct')->with('products',$viewProducts);
     }
+
 }
 

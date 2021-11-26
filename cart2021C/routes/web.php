@@ -34,7 +34,9 @@ Route::get('/viewCategory',[App\Http\Controllers\CategoryController::class, 'vie
 Route::get('/addProduct', function () {
     return view('addProduct',['categoryID'=>App\Models\Category::all()]);
 });
-Route::get('/showCategory',[App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
+
+Route::get('/viewProduct',[App\Http\Controllers\ProductController::class, 'view'])->name('viewProduct');
+
 
 Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 'add'])->name('addProduct');
 
