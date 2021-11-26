@@ -25,10 +25,22 @@ class ProductController extends Controller
         return redirect()->route('viewProduct');
     }
 
-    public function view(){
-        $viewProducts=Product::all();
-        return view('viewProduct')->with('products',$viewProducts);
-    }
 
+
+    public function view(){
+
+        //$viewProduct=Product::all();
+
+        $viewProduct=DB::table('products')
+
+        ->leftjoin('categories','categories.id','=','products.CategoryID')
+
+        ->select('products.*','categories.name as catName')
+
+        ->get();
+
+        return view('viewProduct')->with('products',$viewProduct);
+
+    }
 }
 

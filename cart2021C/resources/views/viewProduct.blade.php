@@ -25,7 +25,7 @@
                     
                     <tr>
                         <td>{{$product->id}}</td>
-                        <td>{{$product->categoryID}}</td>
+                        <td>{{$product->catName}}</td>
                         <td>{{$product->name}}</td>
                         <td><img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="100"></td>
                         <td>{{$product->quantity}}</td>
