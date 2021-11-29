@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <br><br>
         <h3>Add New Category</h3>
-        <form  action="{{route('addProduct')}}" method="POST">
+        <form  action="{{route('addProduct')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="productName">Category</label>

@@ -12,6 +12,10 @@ class ProductController extends Controller
 {
     public function add(){
         $r=request();
+        $image=$r->file('productImage');
+        $image->move('images',$image->getClientOriginalName());
+        $imageName=$image->getClientOriginalName();
+        
         $addProduct=Product::create([
             'categoryID'=>$r->categoryID,
             'name'=>$r->productName,
