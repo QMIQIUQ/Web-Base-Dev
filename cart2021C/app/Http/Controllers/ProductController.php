@@ -19,7 +19,7 @@ class ProductController extends Controller
         $addProduct=Product::create([
             'categoryID'=>$r->categoryID,
             'name'=>$r->productName,
-            'image'=>$r->productImage,
+            'image'=>$imageName,
             'quantity'=>$r->productQuantity,
             'price'=>$r->productPrice,
             'discription'=>$r->productDiscription,

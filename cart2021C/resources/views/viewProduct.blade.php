@@ -27,7 +27,7 @@
                         <td>{{$product->id}}</td>
                         <td>{{$product->catName}}</td>
                         <td>{{$product->name}}</td>
-                        <td><img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="100"></td>
+                        <td><img src="{{ asset('images/') }}/{{$product->image}}" class="img-fluid" alt="" width="100"></td>
                         <td>{{$product->quantity}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->discription}}</td>
