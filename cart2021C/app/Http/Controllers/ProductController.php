@@ -39,6 +39,10 @@ class ProductController extends Controller
         return view('viewProduct')->with('products',$viewProducts);
     }
 
+    public function edit($id){
+        $products=Product::all()->where('id',$id);
+        return view('editProduct')->with('products',$products)->with('category',Category::all());
+    }
 
 }
 

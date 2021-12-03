@@ -34,11 +34,13 @@ Route::get('/viewCategory',[App\Http\Controllers\CategoryController::class, 'vie
 Route::get('/addProduct', function () {
     return view('addProduct',['categoryID'=>App\Models\Category::all()]);
 });
+Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 'add'])->name('addProduct');
 
 Route::get('/viewProduct',[App\Http\Controllers\ProductController::class, 'view'])->name('viewProduct');
 
+Route::get('/editProduct/{id}',[App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
+Route::post('/editProduct/store',[App\Http\Controllers\ProductController::class, 'add'])->name('addProduct');
 
-Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 'add'])->name('addProduct');
 
 
 

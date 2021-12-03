@@ -31,8 +31,7 @@
                         <td>{{$product->quantity}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->discription}}</td>
-                        <td>Action</td>
-                        <td></td>
+                        <td><a href="{{route('editProduct',['id'=>$product->id])}}" class="btn btn-warning">Edit</a></td>
                     </tr>
                     @endforeach
                 </tbody>
