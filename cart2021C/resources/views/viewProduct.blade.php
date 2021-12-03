@@ -31,7 +31,10 @@
                         <td>{{$product->quantity}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->discription}}</td>
-                        <td><a href="{{route('editProduct',['id'=>$product->id])}}" class="btn btn-warning">Edit</a></td>
+                        <td>
+                            <a href="{{route('editProduct',['id'=>$product->id])}}" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('deleteProduct',['id'=>$product->id])}}" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure to delete?')">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

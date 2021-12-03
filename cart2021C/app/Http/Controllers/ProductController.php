@@ -41,8 +41,37 @@ class ProductController extends Controller
 
     public function edit($id){
         $products=Product::all()->where('id',$id);
-        return view('editProduct')->with('products',$products)->with('category',Category::all());
+        return view('editProduct')->with('products',$products)
+        ->with('category',Category::all());
     }
 
+
+    public function update(){
+        $r=request();
+        $products =Product::find($r->id); 
+        if($r->file('productImage')!=''){
+            $image=$r->file('productImage');
+            $image->move('images',$image->getClientOriginalName());
+            $imageName=$image->getClientOriginalName();
+            $products->image=$imageName;
+        }      
+        
+        $products->categoryID = $r->categoryID;
+        $products->name=$r->productName;
+        $products->quantity=$r->productQuantity;
+        $products->price=$r->productPrice;
+        $products->discription=$r->productDiscription;
+        $products->save();
+
+        Session::flash('success', "Product update successfully!");
+        return redirect()->route('viewProduct');
+    }
+
+    public function delete($id){
+        $deleteProducts=Product::find($id);
+        $deleteProducts->delete();
+        Session::flash('success',"Product delete succesfully!");
+        return redirect()->route('viewProduct');
+    }
 }
 

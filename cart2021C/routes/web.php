@@ -39,8 +39,9 @@ Route::post('/addProduct/store',[App\Http\Controllers\ProductController::class, 
 Route::get('/viewProduct',[App\Http\Controllers\ProductController::class, 'view'])->name('viewProduct');
 
 Route::get('/editProduct/{id}',[App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
-Route::post('/editProduct/store',[App\Http\Controllers\ProductController::class, 'add'])->name('addProduct');
+Route::post('/updateProduct',[App\Http\Controllers\ProductController::class, 'update'])->name('updateProduct');
 
+Route::get('/deleteProduct/{id}',[App\Http\Controllers\ProductController::class, 'delete'])->name('deleteProduct');
 
 
 

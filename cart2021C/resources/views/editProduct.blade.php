@@ -7,7 +7,7 @@
     <div class="col-sm-6">
         <br><br>
         <h3>Add New Category</h3>
-        <form  action="" method="POST" enctype="multipart/form-data">
+        <form  action="{{route('updateProduct')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @foreach ($products as $product)
             
@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="productImage">Image</label>
                 <img src="{{ asset('images/') }}/{{$product->image}}" class="img-fluid" alt="" width="100">
-                <input class="form-control" type="file" id="productImage" name="productImage" required value="{{$product->image}}">
+                <input class="form-control" type="file" id="productImage" name="productImage"  value="{{$product->image}}">
             </div>
             <div class="form-group">
                 <label for="productQuantity">Quantity</label>
