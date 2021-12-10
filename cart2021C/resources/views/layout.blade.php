@@ -17,8 +17,7 @@
         <h4 class="alert-heading"></h4>
         <p> {{Session::get('success')}}</p>
         <p class="mb-0"></p>
-      </div>>
-
+      </div>
       </div>
     @endif
 
