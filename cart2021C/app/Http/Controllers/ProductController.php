@@ -73,5 +73,21 @@ class ProductController extends Controller
         Session::flash('success',"Product delete succesfully!");
         return redirect()->route('viewProduct');
     }
+
+
+    public function productDetail($id){
+        $Products=Product::all()->where('id',$id);
+        
+        return view('productDetail')->with('products',$Products);
+    }
+
+    public function show(){
+    $products=Product::paginate(5);
+    return view('showProduct')->with('products',$products);
 }
+}
+
+       
+
+
 

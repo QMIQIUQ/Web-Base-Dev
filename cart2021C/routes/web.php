@@ -43,8 +43,13 @@ Route::post('/updateProduct',[App\Http\Controllers\ProductController::class, 'up
 
 Route::get('/deleteProduct/{id}',[App\Http\Controllers\ProductController::class, 'delete'])->name('deleteProduct');
 
+Route::get('/productDetail/{id}',[App\Http\Controllers\ProductController::class, 'productDetail'])->name('productDetail');
 
+Route::get('/showProduct',[App\Http\Controllers\ProductController::class, 'show'])->name('showProduct');
 
+// Cart
+Route::post('/addCart',[App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart');
+Route::get('/myCart',[App\Http\Controllers\CartController::class, 'view'])->name('viewCart');
 
 
 Auth::routes();
