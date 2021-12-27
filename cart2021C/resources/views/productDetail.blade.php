@@ -19,7 +19,7 @@
                 <div class="col-md-9">
                     <br><br>
                     <p class="card-text">{{$product->discription}}</p>
-                    <div class="card-heading">Quantity<input type="number" min="1" name="quantity" id="quantity">Available:{{$product->quantity}}</div>
+                    <div class="card-heading">Quantity<input type="number" min="1" name="quantity" id="quantity" required>Available:{{$product->quantity}} </div>
                     <br><br>
                     <div class="card-heading">Price:{{$product->price}}</div>
                     <br>

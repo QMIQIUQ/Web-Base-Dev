@@ -50,7 +50,7 @@ Route::get('/showProduct',[App\Http\Controllers\ProductController::class, 'show'
 // Cart
 Route::post('/addCart',[App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart');
 Route::get('/myCart',[App\Http\Controllers\CartController::class, 'view'])->name('viewCart');
-
+Route::post('\checkout', [App\Http\Controllers\PaymentController::class, 'paymentPost'])->name('payment.post');
 
 Auth::routes();
 

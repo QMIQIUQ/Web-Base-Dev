@@ -12,6 +12,11 @@ use Session;
 
 class CartController extends Controller
 {
+    public function __construct(){
+
+        $this->middleware('auth');
+
+    }
     public function add(){
         $r= request();
         $addItem=myCart::create([
