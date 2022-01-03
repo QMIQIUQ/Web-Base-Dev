@@ -84,7 +84,15 @@ class ProductController extends Controller
     public function show(){
     $products=Product::paginate(5);
     return view('showProduct')->with('products',$products);
-}
+    }
+
+    public function searchProduct(){
+        $r=request();
+        $keyword=$r->keyword;
+        $products=DB::table('products')->where('name','like','%'.$keyword.'%')->paginate(5);
+        return view('showProduct')->with('products',$products);
+    }
+
 }
 
        

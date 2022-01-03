@@ -9,6 +9,7 @@ use Auth;
 use App\Models\myOrder;
 use App\Models\myCart;
 use Session;
+use Notification;
 
 
 class PaymentController extends Controller
@@ -44,6 +45,10 @@ class PaymentController extends Controller
             $carts->save();
         }
         
+        $email="dogaang@gmail.com";
+        Notification::route('mail',$email)->notify(new \App\Notifications\orderPaid($email));
+
+
         return back();
     }
 
