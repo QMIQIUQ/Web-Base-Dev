@@ -93,6 +93,14 @@ class ProductController extends Controller
         return view('showProduct')->with('products',$products);
     }
 
+    public function phone(){
+        $products=DB::table('products')->where('categoryID','=','1')->paginate(5);
+        return view('showProduct')->with('products',$products);
+    }
+
+    
+
+    
 }
 
        

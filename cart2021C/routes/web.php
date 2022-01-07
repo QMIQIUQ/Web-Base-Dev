@@ -54,6 +54,12 @@ Route::post('/addCart',[App\Http\Controllers\CartController::class, 'add'])->nam
 Route::get('/myCart',[App\Http\Controllers\CartController::class, 'view'])->name('viewCart');
 Route::post('\checkout', [App\Http\Controllers\PaymentController::class, 'paymentPost'])->name('payment.post');
 
+//order
+Route::get('/myOrders',[App\Http\Controllers\OrderController::class, 'view'])->name('viewOrder');
+
+Route::get('/pdfReport',[App\Http\Controllers\OrderController::class,'pdfReport'])->name('pdfReport');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

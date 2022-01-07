@@ -13,5 +13,8 @@ class myOrder extends Model
         'userID',
         'amount'
     ];
+
+
+
 }
 

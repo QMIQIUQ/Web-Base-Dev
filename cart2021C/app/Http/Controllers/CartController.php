@@ -35,9 +35,9 @@ class CartController extends Controller
         ->select('my_carts.quantity as cartQty','my_carts.id as cid','products.*')
         ->where('my_carts.orderID','=','') //the item haven't make payment
         ->where('my_carts.userID','=',Auth::id())
-        ->get();
+        ->paginate(5);
         //select my_carts.quantity as cartQty,my_carts.id as cid, products.* from my_carts left join products on products.id=my_carts.productID where my_cart.orderID='' and my_carts.userID='Auth::id()'    
-        Return view('myCart')->with('products',$carts);
+        return view('myCart')->with('products',$carts);
 
     }
 }
